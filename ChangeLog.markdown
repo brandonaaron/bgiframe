@@ -1,5 +1,10 @@
 # bgiframe Change Log
 
+## 2.1.2
+
+* Fixed visual test (test.html)
+* Small optimization to only check for IE once
+
 ## 2.1.1 
 
 * Removed $.browser.version for jQuery < 1.1.3
