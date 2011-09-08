@@ -6,7 +6,7 @@
 
 (function($){
 
-$.fn.bgiframe = ($.browser.msie && parseInt($.browser.version) === 6 ? function(s) {
+$.fn.bgiframe = ($.browser.msie && parseInt($.browser.version, 10) === 6 ? function(s) {
     s = $.extend({
         top     : 'auto', // auto == .currentStyle.borderTopWidth
         left    : 'auto', // auto == .currentStyle.borderLeftWidth
