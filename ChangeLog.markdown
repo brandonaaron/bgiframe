@@ -1,5 +1,13 @@
 # bgiframe Change Log
 
+## 3.0.0
+
+* Rewrite of the plugin
+* New conditional option (no longer restricted to IE6 only)
+* No longer uses CSS Expressions
+* Supoprts AMD loaders
+
+
 ## 2.1.2
 
 * Fixed visual test (test.html)
