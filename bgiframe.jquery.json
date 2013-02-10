@@ -1,0 +1,31 @@
+{
+    "name": "bgiframe",
+    "title": "bgiframe",
+    "description": "A jQuery plugin that helps ease the pain when having to deal with IE z-index issues.",
+    "keywords": [
+        "z-index",
+        "iframe",
+        "ie6",
+        "silverlight",
+        "issues",
+        "bgiframe",
+        "background"
+    ],
+    "version": "3.0.0",
+    "author": {
+        "name": "Brandon Aaron",
+        "url": "http://brandonaaron.net"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://raw.github.com/brandonaaron/bgiframe/master/LICENSE.txt"
+        }
+    ],
+    "bugs": "https://github.com/brandonaaron/bgiframe/issues",
+    "homepage": "https://github.com/brandonaaron/bgiframe",
+    "download": "https://github.com/brandonaaron/bgiframe/tags",
+    "dependencies": {
+        "jquery": ">=1.2.6"
+    }
+}

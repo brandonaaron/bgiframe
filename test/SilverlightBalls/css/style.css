@@ -1,0 +1,22 @@
+body {font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 80%; color: #333333; margin:0;}
+.host {border: thin black solid; width: 500px; height: 300px;}
+h2 {color: black; border-bottom: thin #999999 solid; padding-bottom: 15px;}
+img { behavior: url(assets/iepngfix.htc); }
+div {position: relative; overflow: hidden;}
+/*#wpfeHost {display: none;}
+#flashHost {display: none;}*/
+#dhtml_fps {width: 50px; padding: 5px; z-index: 1000;}
+#dhtml_ball_0 {z-index: 0;}
+span {cursor: hand; padding: 8px; margin: 2px; background-color: #ddddff; vertical-align:middle; display: block; float: left;}
+
+#subject {
+	position: absolute;
+	width: 52px;
+	height: 52px;
+	top: 124px;
+	left: 224px;
+}
+#demoControls {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Balls animation test: Silverlight (WPF/e) vs DHTML vs Flash (Flex) vs WPF vs Apollo vs Java (Swing)</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+        <script type="text/javascript" src="js/Silverlight.js"></script>
+        <script type="text/javascript" src="js/ball.js"></script>
+        <script type="text/javascript" src="js/wpfe.ball.js"></script>
+        <script>
+            (function(){
+                    var verMatch = /v=([\w\.]+)/.exec( location.search ),
+                    version = verMatch && verMatch[1], src;
+                    if ( version ) {
+                            src = 'code.jquery.com/jquery-' + version;
+                    } else {
+                            src = 'code.jquery.com/jquery-git';
+                    }
+                    document.write( '<script src="http://' + src + '.js"><\/script>' );
+            })();
+        </script>
+        <script type="text/javascript" src="../../jquery.bgiframe.js"></script>
+        <script>
+            $(function() {
+                var settings = { conditional: /MSIE/.test(navigator.userAgent) },
+                    $testing = $('#testing');
+                $testing
+                    .bgiframe(settings)
+                    .bind('click', function(e) {
+                        $testing
+                            .width( $testing.width() + 10 )
+                            .height( $testing.height() + 10 )
+                            .bgiframe(settings);
+                    });
+            });
+        </script>
+        <style>
+            #wpfe { position: absolute; top: 0px; left: 0px; }
+            #testing { position: relative; z-index: 2; float: left; margin: 5px; border: 5px solid #666; padding: 5px; width: 250px; height: 100px; color: #000; background-color: #999; }
+            #testing div { width: 100%; height: 100%; }
+        </style>
+    </head>
+    <body>
+            <div id="testing"><div>Testing. Click to enlarge by 10px.</div></div>
+        <div id="wpfe">
+            <div id="wpfeHost" class="host">
+            </div>
+            <div style="clear: both;"></div>
+                <script type="text/javascript">
+                Silverlight.createObjectEx(
+                {
+                    source: 'assets/ball_n.xaml',
+                    parentElement: document.getElementById("wpfeHost"),
+                    id: 'wpfeBlock',
+                    properties:
+                        {
+                            width:'500',
+                            height:'300',
+                            background:'white',
+                            isWindowless:'false',
+                            framerate:'500',
+                            version:'1.0'
+                        },
+                    events:
+                        {
+                            onError:null,
+                            onLoad:null
+                        },
+                    context:null
+                }
+                );
+                </script>
+        </div>
+        <script language="JavaScript">
+            /**
+             * Need this function to allow time before Silverlight (WPF/e) host is reloaded
+             *
+             * @param {Object} n
+             */
+            var startOnLoad = true;
+            var isLoaded = false;
+            var numBalls = 16;
+
+            function changeNumberOfBalls(n) {
+                startOnLoad = true;
+                numBalls = n;
+                _wpfeTest.stop();
+            }
+            /**
+             * Silverlight (WPF/e) Balls test
+             *
+             * @param {Object} N
+             */
+            function WPFETest(N) {
+                WPFETest.baseConstructor.call(this, N);
+                this._wpfeBlock = document.getElementById("wpfeBlock");
+            }
+            extend(WPFETest, BallsTest);
+
+            WPFETest.prototype.start = function(N) {
+                if (!WPFETest.base.start.call(this, N)) return;
+                this._savedXaml = this._wpfeBlock.source;
+
+                this._ballsO[0] = new WPFEBall(this._wpfeBlock, "wpfe_ball_0");
+
+                for (var i=1; i<this._N; i++) {
+                    this._ballsO[i] = this._ballsO[0].clone("wpfe_ball_" + i);
+                }
+
+            }
+            WPFETest.prototype.stop = function(){
+                if (!WPFETest.base.stop.call(this)) return;
+                //this._wpfeBlock.reload(); this is no longer supported in Silverlight
+                this._wpfeBlock.source = this._savedXaml;
+                isLoaded = false;
+            }
+            WPFETest.prototype._showFPS = function(fps) {
+                this._wpfeBlock.content.findName("fps").text = fps + " fps";
+            }
+
+
+            var _wpfeTest = new WPFETest(numBalls);
+            // called from <Canvas ... Loaded="javascript:wpfeLoaded">
+            function wpfeLoaded() {
+                //alert("hello");
+                if (startOnLoad) {
+                    _wpfeTest.start(numBalls);
+                    startOnLoad = false;
+                }
+                isLoaded = true;
+            }
+        </script>
+    </body>
+</html>
+
