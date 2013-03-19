@@ -28,7 +28,8 @@ Here is an example of using a different conditional and recalling `bgiframe` on 
                 .bgiframe(settings);
         });
 
-Usage of the native javascript plugin (typescript.bgiframe.js):
+
+Usage of the native javascript plugin, when you use the plugin without jQuery ( **typescript.bgiframe.js** ):
 
 ```html
 <html>
