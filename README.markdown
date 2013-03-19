@@ -28,6 +28,43 @@ Here is an example of using a different conditional and recalling `bgiframe` on 
                 .bgiframe(settings);
         });
 
+
+Usage of the native javascript plugin, when you use the plugin without jQuery ( **typescript.bgiframe.js** ):
+
+```html
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <script type="text/javascript" src="Scripts/typescript.bgiframe.js"></script>
+</head>
+<body>
+  <h1>TypeScript HTML App for plugin bgiframe (IE6)</h1>
+
+  <div id="content">content</div>
+  <div id="content2">content2</div>
+
+  <input type="button" name="btnRefresh" value="refresh content2" onclick="refresh();" />
+  
+  <script type="text/javascript">
+```
+  ```javascript
+      var content = document.getElementById('content');
+      var bgiframe = new BgiFrame.Bgiframe(content);
+
+      function refresh() {
+          if (bgiframe) {
+              // bgiframe.fire(document.getElementById('content'));
+              bgiframe.fire(document.getElementById('content2'));
+          }
+      }
+  ```
+```html
+  </script>
+</body>
+</html>
+```
+
 ### Settings
 
 The plugin tries its best to handle most situations but sometimes some configuration is necessary. The following is a list of available settings.
