@@ -21,7 +21,7 @@
             height      : 'auto', // auto == offsetHeight
             opacity     : true,
             src         : 'javascript:false;',
-            conditional : /MSIE 6.0/.test(navigator.userAgent) // expresion or function. return false to prevent iframe insertion
+            conditional : /MSIE 6\.0/.test(navigator.userAgent) // expresion or function. return false to prevent iframe insertion
         }, s);
 
         // wrap conditional in a function if it isn't already
