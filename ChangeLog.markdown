@@ -5,8 +5,7 @@
 * Rewrite of the plugin
 * New conditional option (no longer restricted to IE6 only)
 * No longer uses CSS Expressions
-* Supoprts AMD loaders
-
+* Supports AMD loaders
 
 ## 2.1.2
 
