@@ -2,6 +2,8 @@
  * Licensed under the MIT License (LICENSE.txt).
  *
  * Version 3.0.1-pre
+ *
+ * Requires jQuery >= 1.2.6
  */
 
 (function (factory) {
