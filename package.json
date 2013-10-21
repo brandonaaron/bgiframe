@@ -1,0 +1,41 @@
+{
+  "name": "jquery-bgiframe",
+  "version": "3.0.1-pre",
+  "author": "Brandon Aaron (http://brandon.aaron.sh)",
+  "description": "A jQuery plugin that helps ease the pain when having to deal with IE z-index issues.",
+  "main": "./jquery.bgiframe.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brandonaaron/bgiframe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brandonaaron/bgiframe/issues"
+  },
+  "keywords": [
+    "jquery",
+    "plugin",
+    "browser",
+    "z-index",
+    "iframe",
+    "ie6",
+    "silverlight",
+    "issues",
+    "bgiframe",
+    "background"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/brandonaaron/bgiframe/master/LICENSE.txt"
+    }
+  ],
+  "readmeFilename": "README.markdown",
+  "directories": {
+    "test": "test"
+  },
+  "jam": {
+    "dependencies": {
+      "jquery": ">=1.2.6"
+    }
+  }
+}

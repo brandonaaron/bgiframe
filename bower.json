@@ -1,0 +1,15 @@
+{
+  "name": "jquery-bgiframe",
+  "version": "3.0.1-pre",
+  "main": "./jquery.bgiframe.js",
+  "ignore": [
+    ".*",
+    "*.txt",
+    "*.markdown",
+    "*.json",
+    "test"
+  ],
+  "dependencies": {
+    "jquery": ">=1.2.6"
+  }
+}
