@@ -1,5 +1,10 @@
 # bgiframe Change Log
 
+## 3.0.1
+
+* Fix default IE 6 regex
+* Add support for more package managers
+
 ## 3.0.0
 
 * Rewrite of the plugin

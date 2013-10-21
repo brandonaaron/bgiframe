@@ -1,6 +1,6 @@
 {
   "name": "jquery-bgiframe",
-  "version": "3.0.1-pre",
+  "version": "3.0.1",
   "author": "Brandon Aaron (http://brandon.aaron.sh)",
   "description": "A jQuery plugin that helps ease the pain when having to deal with IE z-index issues.",
   "main": "./jquery.bgiframe.js",
